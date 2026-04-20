@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  neo4j:
+    image: neo4j:5.13
+    ports:
+      - "7687:7687"
+      - "7474:7474"
+    environment:
+      NEO4J_AUTH: neo4j/password
+    volumes:
+      - neo4j_data:/data
+
+  chromadb:
+    image: chromadb/chroma:latest
+    ports:
+      - "8001:8000"
+    volumes:
+      - chromadb_data:/chroma/chroma_data
+
+volumes:
+  neo4j_data:
+  chromadb_data:
