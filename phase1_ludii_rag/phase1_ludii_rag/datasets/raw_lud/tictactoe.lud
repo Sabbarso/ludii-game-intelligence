@@ -1,0 +1,1 @@
+(game "TicTacToe" (players 2) (equipment {(board (square 3))(piece "Marker" Each)}) (rules (end (result Mover Win))))

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Ludo",
+    "url": "",
+    "rules_text": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "lud_content": "(game \"Ludo\" (players 4) (equipment {(board (spiral 56 4))(piece \"Counter\" Each)}) (rules (end (result Mover Win))))"
+  },
+  {
+    "name": "Chess",
+    "url": "",
+    "rules_text": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "lud_content": "(game \"Chess\" (players 2) (equipment {(board (square 8))(piece \"Pawn\" Each)}) (rules (end (result Mover Win))))"
+  },
+  {
+    "name": "Reversi",
+    "url": "",
+    "rules_text": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "lud_content": "(game \"Reversi\" (players 2) (equipment {(board (square 8))(piece \"Disc\" Each)}) (rules (end (result Mover Win))))"
+  },
+  {
+    "name": "Checkers",
+    "url": "",
+    "rules_text": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "lud_content": "(game \"Checkers\" (players 2) (equipment {(board (square 8))(piece \"Piece\" Each)}) (rules (end (result Mover Win))))"
+  },
+  {
+    "name": "TicTacToe",
+    "url": "",
+    "rules_text": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "lud_content": "(game \"TicTacToe\" (players 2) (equipment {(board (square 3))(piece \"Marker\" Each)}) (rules (end (result Mover Win))))"
+  }
+]

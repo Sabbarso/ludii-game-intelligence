@@ -1,0 +1,1 @@
+(game "Chess" (players 2) (equipment {(board (square 8))(piece "Pawn" Each)}) (rules (end (result Mover Win))))

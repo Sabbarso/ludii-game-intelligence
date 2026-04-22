@@ -1,0 +1,1 @@
+(game "Ludo" (players 4) (equipment {(board (spiral 56 4))(piece "Counter" Each)}) (rules (end (result Mover Win))))
