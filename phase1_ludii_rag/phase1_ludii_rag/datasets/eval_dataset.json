@@ -1,0 +1,986 @@
+[
+  {
+    "id": "Ludo_pos_0",
+    "game": "Ludo",
+    "strategy": "pos",
+    "variant": 0,
+    "original": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "damaged": "Players move ___ ___ from home to finish . ___ a 6 to enter a ___ on the board . Landing on ___ ___ them back to start . First ___ to ___ all pawns home wins .",
+    "removed": [
+      {
+        "word": "4",
+        "pos": "NUM"
+      },
+      {
+        "word": "pawns",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Roll",
+        "pos": "VERB"
+      },
+      {
+        "word": "pawn",
+        "pos": "NOUN"
+      },
+      {
+        "word": "opponent",
+        "pos": "NOUN"
+      },
+      {
+        "word": "sends",
+        "pos": "VERB"
+      },
+      {
+        "word": "player",
+        "pos": "NOUN"
+      },
+      {
+        "word": "bring",
+        "pos": "VERB"
+      }
+    ]
+  },
+  {
+    "id": "Ludo_pos_1",
+    "game": "Ludo",
+    "strategy": "pos",
+    "variant": 1,
+    "original": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "damaged": "Players ___ ___ pawns from home to finish . ___ a 6 to enter a ___ on the board . Landing on opponent sends them back to start . First ___ to ___ all ___ home ___ .",
+    "removed": [
+      {
+        "word": "move",
+        "pos": "VERB"
+      },
+      {
+        "word": "4",
+        "pos": "NUM"
+      },
+      {
+        "word": "Roll",
+        "pos": "VERB"
+      },
+      {
+        "word": "pawn",
+        "pos": "NOUN"
+      },
+      {
+        "word": "player",
+        "pos": "NOUN"
+      },
+      {
+        "word": "bring",
+        "pos": "VERB"
+      },
+      {
+        "word": "pawns",
+        "pos": "NOUN"
+      },
+      {
+        "word": "wins",
+        "pos": "NOUN"
+      }
+    ]
+  },
+  {
+    "id": "Ludo_pos_2",
+    "game": "Ludo",
+    "strategy": "pos",
+    "variant": 2,
+    "original": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "damaged": "___ ___ 4 pawns from home to finish . Roll a 6 to ___ a pawn on the ___ . Landing on ___ ___ them back to start . First player to bring all ___ ___ wins .",
+    "removed": [
+      {
+        "word": "Players",
+        "pos": "NOUN"
+      },
+      {
+        "word": "move",
+        "pos": "VERB"
+      },
+      {
+        "word": "enter",
+        "pos": "VERB"
+      },
+      {
+        "word": "board",
+        "pos": "NOUN"
+      },
+      {
+        "word": "opponent",
+        "pos": "NOUN"
+      },
+      {
+        "word": "sends",
+        "pos": "VERB"
+      },
+      {
+        "word": "pawns",
+        "pos": "NOUN"
+      },
+      {
+        "word": "home",
+        "pos": "NOUN"
+      }
+    ]
+  },
+  {
+    "id": "Ludo_truncate_0",
+    "game": "Ludo",
+    "strategy": "truncate",
+    "variant": 0,
+    "original": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "damaged": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on t [INCOMPLETE]",
+    "removed": [
+      "he board. Landing on opponent sends them back to start. First player to bring all pawns home wins."
+    ]
+  },
+  {
+    "id": "Ludo_truncate_1",
+    "game": "Ludo",
+    "strategy": "truncate",
+    "variant": 1,
+    "original": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "damaged": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. L [INCOMPLETE]",
+    "removed": [
+      "anding on opponent sends them back to start. First player to bring all pawns home wins."
+    ]
+  },
+  {
+    "id": "Ludo_truncate_2",
+    "game": "Ludo",
+    "strategy": "truncate",
+    "variant": 2,
+    "original": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "damaged": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on [INCOMPLETE]",
+    "removed": [
+      " the board. Landing on opponent sends them back to start. First player to bring all pawns home wins."
+    ]
+  },
+  {
+    "id": "Ludo_sentences_0",
+    "game": "Ludo",
+    "strategy": "sentences",
+    "variant": 0,
+    "original": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "damaged": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. [MISSING RULE] First player to bring all pawns home wins.",
+    "removed": [
+      "Landing on opponent sends them back to start."
+    ]
+  },
+  {
+    "id": "Ludo_sentences_1",
+    "game": "Ludo",
+    "strategy": "sentences",
+    "variant": 1,
+    "original": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "damaged": "Players move 4 pawns from home to finish. [MISSING RULE] Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "removed": [
+      "Roll a 6 to enter a pawn on the board."
+    ]
+  },
+  {
+    "id": "Ludo_sentences_2",
+    "game": "Ludo",
+    "strategy": "sentences",
+    "variant": 2,
+    "original": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. Landing on opponent sends them back to start. First player to bring all pawns home wins.",
+    "damaged": "Players move 4 pawns from home to finish. Roll a 6 to enter a pawn on the board. [MISSING RULE] First player to bring all pawns home wins.",
+    "removed": [
+      "Landing on opponent sends them back to start."
+    ]
+  },
+  {
+    "id": "Chess_pos_0",
+    "game": "Chess",
+    "strategy": "pos",
+    "variant": 0,
+    "original": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "damaged": "Each player ___ 16 ___ on an ___ board . ___ move forward ___ ___ or two on first move . ___ move horizontally or vertically any number of squares . ___ move diagonally any number of squares . Knights move in an ___ - shape . ___ combines rook and bishop . Checkmate the opponent ___ to ___ .",
+    "removed": [
+      {
+        "word": "has",
+        "pos": "VERB"
+      },
+      {
+        "word": "pieces",
+        "pos": "NOUN"
+      },
+      {
+        "word": "8x8",
+        "pos": "NUM"
+      },
+      {
+        "word": "Pawns",
+        "pos": "NOUN"
+      },
+      {
+        "word": "one",
+        "pos": "NUM"
+      },
+      {
+        "word": "square",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Rooks",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Bishops",
+        "pos": "NOUN"
+      },
+      {
+        "word": "L",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Queen",
+        "pos": "NOUN"
+      },
+      {
+        "word": "king",
+        "pos": "NOUN"
+      },
+      {
+        "word": "win",
+        "pos": "VERB"
+      }
+    ]
+  },
+  {
+    "id": "Chess_pos_1",
+    "game": "Chess",
+    "strategy": "pos",
+    "variant": 1,
+    "original": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "damaged": "Each ___ has 16 ___ on an 8x8 board . Pawns ___ forward one square or two on first move . Rooks ___ horizontally or vertically any ___ of ___ . ___ move diagonally any number of ___ . Knights move in an L - shape . ___ combines ___ and bishop . ___ the opponent ___ to win .",
+    "removed": [
+      {
+        "word": "player",
+        "pos": "NOUN"
+      },
+      {
+        "word": "pieces",
+        "pos": "NOUN"
+      },
+      {
+        "word": "move",
+        "pos": "VERB"
+      },
+      {
+        "word": "move",
+        "pos": "VERB"
+      },
+      {
+        "word": "number",
+        "pos": "NOUN"
+      },
+      {
+        "word": "squares",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Bishops",
+        "pos": "NOUN"
+      },
+      {
+        "word": "squares",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Queen",
+        "pos": "NOUN"
+      },
+      {
+        "word": "rook",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Checkmate",
+        "pos": "VERB"
+      },
+      {
+        "word": "king",
+        "pos": "NOUN"
+      }
+    ]
+  },
+  {
+    "id": "Chess_pos_2",
+    "game": "Chess",
+    "strategy": "pos",
+    "variant": 2,
+    "original": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "damaged": "Each ___ has ___ ___ on an ___ board . ___ ___ forward one square or two on first ___ . Rooks ___ horizontally or vertically any number of ___ . Bishops ___ diagonally any number of ___ . Knights move in an L - shape . Queen ___ rook and bishop . Checkmate the opponent king to win .",
+    "removed": [
+      {
+        "word": "player",
+        "pos": "NOUN"
+      },
+      {
+        "word": "16",
+        "pos": "NUM"
+      },
+      {
+        "word": "pieces",
+        "pos": "NOUN"
+      },
+      {
+        "word": "8x8",
+        "pos": "NUM"
+      },
+      {
+        "word": "Pawns",
+        "pos": "NOUN"
+      },
+      {
+        "word": "move",
+        "pos": "VERB"
+      },
+      {
+        "word": "move",
+        "pos": "NOUN"
+      },
+      {
+        "word": "move",
+        "pos": "VERB"
+      },
+      {
+        "word": "squares",
+        "pos": "NOUN"
+      },
+      {
+        "word": "move",
+        "pos": "VERB"
+      },
+      {
+        "word": "squares",
+        "pos": "NOUN"
+      },
+      {
+        "word": "combines",
+        "pos": "VERB"
+      }
+    ]
+  },
+  {
+    "id": "Chess_truncate_0",
+    "game": "Chess",
+    "strategy": "truncate",
+    "variant": 0,
+    "original": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "damaged": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bi [INCOMPLETE]",
+    "removed": [
+      "shops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win."
+    ]
+  },
+  {
+    "id": "Chess_truncate_1",
+    "game": "Chess",
+    "strategy": "truncate",
+    "variant": 1,
+    "original": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "damaged": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or verti [INCOMPLETE]",
+    "removed": [
+      "cally any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win."
+    ]
+  },
+  {
+    "id": "Chess_truncate_2",
+    "game": "Chess",
+    "strategy": "truncate",
+    "variant": 2,
+    "original": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "damaged": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move di [INCOMPLETE]",
+    "removed": [
+      "agonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win."
+    ]
+  },
+  {
+    "id": "Chess_sentences_0",
+    "game": "Chess",
+    "strategy": "sentences",
+    "variant": 0,
+    "original": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "damaged": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. [MISSING RULE] Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "removed": [
+      "Bishops move diagonally any number of squares."
+    ]
+  },
+  {
+    "id": "Chess_sentences_1",
+    "game": "Chess",
+    "strategy": "sentences",
+    "variant": 1,
+    "original": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "damaged": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. [MISSING RULE] Checkmate the opponent king to win.",
+    "removed": [
+      "Queen combines rook and bishop."
+    ]
+  },
+  {
+    "id": "Chess_sentences_2",
+    "game": "Chess",
+    "strategy": "sentences",
+    "variant": 2,
+    "original": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. Queen combines rook and bishop. Checkmate the opponent king to win.",
+    "damaged": "Each player has 16 pieces on an 8x8 board. Pawns move forward one square or two on first move. Rooks move horizontally or vertically any number of squares. Bishops move diagonally any number of squares. Knights move in an L-shape. [MISSING RULE] Checkmate the opponent king to win.",
+    "removed": [
+      "Queen combines rook and bishop."
+    ]
+  },
+  {
+    "id": "Reversi_pos_0",
+    "game": "Reversi",
+    "strategy": "pos",
+    "variant": 0,
+    "original": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "damaged": "___ place discs on an 8x8 board . A valid move traps ___ or more opponent ___ between yours . Trapped discs ___ to your color . If you can not ___ you must ___ . ___ ends when neither ___ can move . Player with most ___ wins .",
+    "removed": [
+      {
+        "word": "Players",
+        "pos": "NOUN"
+      },
+      {
+        "word": "one",
+        "pos": "NUM"
+      },
+      {
+        "word": "discs",
+        "pos": "NOUN"
+      },
+      {
+        "word": "flip",
+        "pos": "VERB"
+      },
+      {
+        "word": "move",
+        "pos": "VERB"
+      },
+      {
+        "word": "pass",
+        "pos": "VERB"
+      },
+      {
+        "word": "Game",
+        "pos": "PROPN"
+      },
+      {
+        "word": "player",
+        "pos": "NOUN"
+      },
+      {
+        "word": "discs",
+        "pos": "NOUN"
+      }
+    ]
+  },
+  {
+    "id": "Reversi_pos_1",
+    "game": "Reversi",
+    "strategy": "pos",
+    "variant": 1,
+    "original": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "damaged": "___ place ___ on an 8x8 board . A valid ___ ___ one or more opponent discs between ___ . ___ ___ flip to your ___ . If you can not move you must ___ . Game ends when neither player can move . Player with most discs wins .",
+    "removed": [
+      {
+        "word": "Players",
+        "pos": "NOUN"
+      },
+      {
+        "word": "discs",
+        "pos": "NOUN"
+      },
+      {
+        "word": "move",
+        "pos": "NOUN"
+      },
+      {
+        "word": "traps",
+        "pos": "NOUN"
+      },
+      {
+        "word": "yours",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Trapped",
+        "pos": "VERB"
+      },
+      {
+        "word": "discs",
+        "pos": "NOUN"
+      },
+      {
+        "word": "color",
+        "pos": "NOUN"
+      },
+      {
+        "word": "pass",
+        "pos": "VERB"
+      }
+    ]
+  },
+  {
+    "id": "Reversi_pos_2",
+    "game": "Reversi",
+    "strategy": "pos",
+    "variant": 2,
+    "original": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "damaged": "___ ___ ___ on an 8x8 board . A valid move traps ___ or more opponent ___ between yours . ___ discs ___ to your color . If you can not move you must pass . ___ ___ when neither player can move . Player with most discs wins .",
+    "removed": [
+      {
+        "word": "Players",
+        "pos": "NOUN"
+      },
+      {
+        "word": "place",
+        "pos": "VERB"
+      },
+      {
+        "word": "discs",
+        "pos": "NOUN"
+      },
+      {
+        "word": "one",
+        "pos": "NUM"
+      },
+      {
+        "word": "discs",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Trapped",
+        "pos": "VERB"
+      },
+      {
+        "word": "flip",
+        "pos": "VERB"
+      },
+      {
+        "word": "Game",
+        "pos": "PROPN"
+      },
+      {
+        "word": "ends",
+        "pos": "VERB"
+      }
+    ]
+  },
+  {
+    "id": "Reversi_truncate_0",
+    "game": "Reversi",
+    "strategy": "truncate",
+    "variant": 0,
+    "original": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "damaged": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours.  [INCOMPLETE]",
+    "removed": [
+      "Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins."
+    ]
+  },
+  {
+    "id": "Reversi_truncate_1",
+    "game": "Reversi",
+    "strategy": "truncate",
+    "variant": 1,
+    "original": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "damaged": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to  [INCOMPLETE]",
+    "removed": [
+      "your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins."
+    ]
+  },
+  {
+    "id": "Reversi_truncate_2",
+    "game": "Reversi",
+    "strategy": "truncate",
+    "variant": 2,
+    "original": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "damaged": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you  [INCOMPLETE]",
+    "removed": [
+      "cannot move you must pass. Game ends when neither player can move. Player with most discs wins."
+    ]
+  },
+  {
+    "id": "Reversi_sentences_0",
+    "game": "Reversi",
+    "strategy": "sentences",
+    "variant": 0,
+    "original": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "damaged": "Players place discs on an 8x8 board. [MISSING RULE] Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "removed": [
+      "A valid move traps one or more opponent discs between yours."
+    ]
+  },
+  {
+    "id": "Reversi_sentences_1",
+    "game": "Reversi",
+    "strategy": "sentences",
+    "variant": 1,
+    "original": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "damaged": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. [MISSING RULE] Game ends when neither player can move. Player with most discs wins.",
+    "removed": [
+      "If you cannot move you must pass."
+    ]
+  },
+  {
+    "id": "Reversi_sentences_2",
+    "game": "Reversi",
+    "strategy": "sentences",
+    "variant": 2,
+    "original": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. Game ends when neither player can move. Player with most discs wins.",
+    "damaged": "Players place discs on an 8x8 board. A valid move traps one or more opponent discs between yours. Trapped discs flip to your color. If you cannot move you must pass. [MISSING RULE] Player with most discs wins.",
+    "removed": [
+      "Game ends when neither player can move."
+    ]
+  },
+  {
+    "id": "Checkers_pos_0",
+    "game": "Checkers",
+    "strategy": "pos",
+    "variant": 0,
+    "original": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "damaged": "Pieces move diagonally forward one ___ . Capture by ___ over ___ pieces diagonally . Multiple captures in one ___ are ___ . Reach the last row to ___ a ___ . Kings move both forward and backward diagonally .",
+    "removed": [
+      {
+        "word": "square",
+        "pos": "NOUN"
+      },
+      {
+        "word": "jumping",
+        "pos": "VERB"
+      },
+      {
+        "word": "opponent",
+        "pos": "NOUN"
+      },
+      {
+        "word": "turn",
+        "pos": "NOUN"
+      },
+      {
+        "word": "allowed",
+        "pos": "VERB"
+      },
+      {
+        "word": "become",
+        "pos": "VERB"
+      },
+      {
+        "word": "King",
+        "pos": "NOUN"
+      }
+    ]
+  },
+  {
+    "id": "Checkers_pos_1",
+    "game": "Checkers",
+    "strategy": "pos",
+    "variant": 1,
+    "original": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "damaged": "___ move diagonally forward ___ square . ___ by jumping over opponent pieces diagonally . Multiple captures in one ___ are allowed . ___ the last ___ to become a King . ___ move both forward and backward diagonally .",
+    "removed": [
+      {
+        "word": "Pieces",
+        "pos": "NOUN"
+      },
+      {
+        "word": "one",
+        "pos": "NUM"
+      },
+      {
+        "word": "Capture",
+        "pos": "VERB"
+      },
+      {
+        "word": "turn",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Reach",
+        "pos": "VERB"
+      },
+      {
+        "word": "row",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Kings",
+        "pos": "NOUN"
+      }
+    ]
+  },
+  {
+    "id": "Checkers_pos_2",
+    "game": "Checkers",
+    "strategy": "pos",
+    "variant": 2,
+    "original": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "damaged": "Pieces move diagonally forward one ___ . ___ by jumping over opponent ___ diagonally . Multiple captures in one ___ are allowed . Reach the last row to ___ a ___ . Kings ___ both forward and backward diagonally .",
+    "removed": [
+      {
+        "word": "square",
+        "pos": "NOUN"
+      },
+      {
+        "word": "Capture",
+        "pos": "VERB"
+      },
+      {
+        "word": "pieces",
+        "pos": "NOUN"
+      },
+      {
+        "word": "turn",
+        "pos": "NOUN"
+      },
+      {
+        "word": "become",
+        "pos": "VERB"
+      },
+      {
+        "word": "King",
+        "pos": "NOUN"
+      },
+      {
+        "word": "move",
+        "pos": "VERB"
+      }
+    ]
+  },
+  {
+    "id": "Checkers_truncate_0",
+    "game": "Checkers",
+    "strategy": "truncate",
+    "variant": 0,
+    "original": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "damaged": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are  [INCOMPLETE]",
+    "removed": [
+      "allowed. Reach the last row to become a King. Kings move both forward and backward diagonally."
+    ]
+  },
+  {
+    "id": "Checkers_truncate_1",
+    "game": "Checkers",
+    "strategy": "truncate",
+    "variant": 1,
+    "original": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "damaged": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multipl [INCOMPLETE]",
+    "removed": [
+      "e captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally."
+    ]
+  },
+  {
+    "id": "Checkers_truncate_2",
+    "game": "Checkers",
+    "strategy": "truncate",
+    "variant": 2,
+    "original": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "damaged": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multipl [INCOMPLETE]",
+    "removed": [
+      "e captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally."
+    ]
+  },
+  {
+    "id": "Checkers_sentences_0",
+    "game": "Checkers",
+    "strategy": "sentences",
+    "variant": 0,
+    "original": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "damaged": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. [MISSING RULE]",
+    "removed": [
+      "Kings move both forward and backward diagonally."
+    ]
+  },
+  {
+    "id": "Checkers_sentences_1",
+    "game": "Checkers",
+    "strategy": "sentences",
+    "variant": 1,
+    "original": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "damaged": "Pieces move diagonally forward one square. [MISSING RULE] Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "removed": [
+      "Capture by jumping over opponent pieces diagonally."
+    ]
+  },
+  {
+    "id": "Checkers_sentences_2",
+    "game": "Checkers",
+    "strategy": "sentences",
+    "variant": 2,
+    "original": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. Reach the last row to become a King. Kings move both forward and backward diagonally.",
+    "damaged": "Pieces move diagonally forward one square. Capture by jumping over opponent pieces diagonally. Multiple captures in one turn are allowed. [MISSING RULE] Kings move both forward and backward diagonally.",
+    "removed": [
+      "Reach the last row to become a King."
+    ]
+  },
+  {
+    "id": "TicTacToe_pos_0",
+    "game": "TicTacToe",
+    "strategy": "pos",
+    "variant": 0,
+    "original": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "damaged": "___ alternate placing X or O on a ___ grid . First to ___ 3 ___ horizontally vertically or diagonally wins . If board fills with no ___ the ___ is a draw .",
+    "removed": [
+      {
+        "word": "Players",
+        "pos": "NOUN"
+      },
+      {
+        "word": "3x3",
+        "pos": "NUM"
+      },
+      {
+        "word": "align",
+        "pos": "VERB"
+      },
+      {
+        "word": "symbols",
+        "pos": "NOUN"
+      },
+      {
+        "word": "winner",
+        "pos": "NOUN"
+      },
+      {
+        "word": "game",
+        "pos": "NOUN"
+      }
+    ]
+  },
+  {
+    "id": "TicTacToe_pos_1",
+    "game": "TicTacToe",
+    "strategy": "pos",
+    "variant": 1,
+    "original": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "damaged": "Players ___ ___ X or ___ on a ___ grid . First to align 3 ___ horizontally vertically or diagonally wins . If board fills with no winner the ___ is a draw .",
+    "removed": [
+      {
+        "word": "alternate",
+        "pos": "VERB"
+      },
+      {
+        "word": "placing",
+        "pos": "VERB"
+      },
+      {
+        "word": "O",
+        "pos": "NOUN"
+      },
+      {
+        "word": "3x3",
+        "pos": "NUM"
+      },
+      {
+        "word": "symbols",
+        "pos": "NOUN"
+      },
+      {
+        "word": "game",
+        "pos": "NOUN"
+      }
+    ]
+  },
+  {
+    "id": "TicTacToe_pos_2",
+    "game": "TicTacToe",
+    "strategy": "pos",
+    "variant": 2,
+    "original": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "damaged": "Players ___ ___ X or O on a ___ grid . First to align 3 symbols horizontally vertically or diagonally ___ . If ___ ___ with no winner the game is a draw .",
+    "removed": [
+      {
+        "word": "alternate",
+        "pos": "VERB"
+      },
+      {
+        "word": "placing",
+        "pos": "VERB"
+      },
+      {
+        "word": "3x3",
+        "pos": "NUM"
+      },
+      {
+        "word": "wins",
+        "pos": "NOUN"
+      },
+      {
+        "word": "board",
+        "pos": "NOUN"
+      },
+      {
+        "word": "fills",
+        "pos": "VERB"
+      }
+    ]
+  },
+  {
+    "id": "TicTacToe_truncate_0",
+    "game": "TicTacToe",
+    "strategy": "truncate",
+    "variant": 0,
+    "original": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "damaged": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertical [INCOMPLETE]",
+    "removed": [
+      "ly or diagonally wins. If board fills with no winner the game is a draw."
+    ]
+  },
+  {
+    "id": "TicTacToe_truncate_1",
+    "game": "TicTacToe",
+    "strategy": "truncate",
+    "variant": 1,
+    "original": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "damaged": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally verticall [INCOMPLETE]",
+    "removed": [
+      "y or diagonally wins. If board fills with no winner the game is a draw."
+    ]
+  },
+  {
+    "id": "TicTacToe_truncate_2",
+    "game": "TicTacToe",
+    "strategy": "truncate",
+    "variant": 2,
+    "original": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "damaged": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally ver [INCOMPLETE]",
+    "removed": [
+      "tically or diagonally wins. If board fills with no winner the game is a draw."
+    ]
+  },
+  {
+    "id": "TicTacToe_sentences_0",
+    "game": "TicTacToe",
+    "strategy": "sentences",
+    "variant": 0,
+    "original": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "damaged": "[MISSING RULE] First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "removed": [
+      "Players alternate placing X or O on a 3x3 grid."
+    ]
+  },
+  {
+    "id": "TicTacToe_sentences_1",
+    "game": "TicTacToe",
+    "strategy": "sentences",
+    "variant": 1,
+    "original": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "damaged": "[MISSING RULE] First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "removed": [
+      "Players alternate placing X or O on a 3x3 grid."
+    ]
+  },
+  {
+    "id": "TicTacToe_sentences_2",
+    "game": "TicTacToe",
+    "strategy": "sentences",
+    "variant": 2,
+    "original": "Players alternate placing X or O on a 3x3 grid. First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "damaged": "[MISSING RULE] First to align 3 symbols horizontally vertically or diagonally wins. If board fills with no winner the game is a draw.",
+    "removed": [
+      "Players alternate placing X or O on a 3x3 grid."
+    ]
+  }
+]
