@@ -8,6 +8,7 @@ services:
       - "7474:7474"
     environment:
       NEO4J_AUTH: neo4j/password
+      NEO4J_PLUGINS: '["apoc"]'
     volumes:
       - neo4j_data:/data
 
