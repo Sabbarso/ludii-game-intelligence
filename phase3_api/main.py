@@ -1,37 +1,38 @@
-"""Application FastAPI principale."""
+"""Application FastAPI principale - LUDII Game Intelligence"""
 
 from contextlib import asynccontextmanager
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-
-
 from phase3_api.schemas import HealthResponse
-from phase3_api.endpoints import detect, rules, restore, analyze, graph
-
-from .historical_search import router as historical_router
-from .gnn_routes import router as gnn_router
+from phase3_api.historical_search import router as historical_router
+from phase3_api.gnn_routes import router as gnn_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("Demarrage de l'API...")
-    print("Chargement du detecteur YOLO...")
-    get_detector()
-    print("Chargement du pipeline RAG...")
-    get_pipeline()
-    print("API prete!")
+    """Startup and shutdown events"""
+    print("\n" + "="*80)
+    print("🚀 LUDII API STARTING...")
+    print("="*80)
+    print("\n📊 Available modules:")
+    print("   ✅ Neo4j Graph Database")
+    print("   ✅ GNN Embeddings (32-dim)")
+    print("   ✅ Historical Search")
+    print("   ⏳ Vision (Phase 5)")
+    print("   ⏳ NLP RAG (Phase 1)")
+    print("\n✅ API READY!")
+    print("="*80 + "\n")
     yield
-    print("Arret de l'API")
-
+    print("\n🛑 API SHUTTING DOWN...")
 
 app = FastAPI(
-    title="Board Game AI API",
-    description="API pour reconnaissance de jeux et restauration de regles",
-    version="1.0.0",
+    title="🎲 LUDII Game Intelligence API",
+    description="AI-powered game recognition and analysis system",
+    version="2.0.0",
     lifespan=lifespan,
 )
 
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -40,30 +41,39 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+# ========== ROUTERS ==========
 app.include_router(historical_router)
 app.include_router(gnn_router)
 
-@app.get("/health", response_model=HealthResponse, tags=["System"])
-async def health():
-    return HealthResponse(
-        status="ok",
-        version="1.0.0",
-        components={"vision": "ready", "rag": "ready"},
-        supported_games=["chess", "checkers"],
-    )
-
-
+# ========== BASIC ENDPOINTS ==========
 @app.get("/", tags=["System"])
 async def root():
-    return {"message": "Board Game AI API", "docs": "/docs", "health": "/health"}
+    """Root endpoint - API info"""
+    return {
+        "name": "LUDII Game Intelligence API",
+        "version": "2.0.0",
+        "docs": "/docs",
+        "health": "/health",
+        "endpoints": {
+            "historical": "/api/v1/historical_search",
+            "gnn": "/api/v1/gnn/similar_games",
+            "swagger": "/docs"
+        }
+    }
 
-
-app.include_router(detect.router, prefix="/api/v1", tags=["Vision"])
-app.include_router(rules.router, prefix="/api/v1", tags=["RAG"])
-app.include_router(restore.router, prefix="/api/v1", tags=["RAG"])
-app.include_router(analyze.router, prefix="/api/v1", tags=["Pipeline"])
-app.include_router(graph.router, prefix="/api/v1", tags=["Graph"])
+@app.get("/health", response_model=HealthResponse, tags=["System"])
+async def health():
+    """Health check"""
+    return HealthResponse(
+        status="ok",
+        version="2.0.0",
+        components={
+            "neo4j": "ready",
+            "gnn": "ready",
+            "historical_search": "ready"
+        },
+        supported_games=["chess", "go", "checkers", "shogi", "xiangqi"]
+    )
 
 if __name__ == "__main__":
     import uvicorn
