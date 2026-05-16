@@ -3,7 +3,7 @@
 from functools import lru_cache
 
 from phase2_vision.board_detector import BoardGameDetector
-from phase1_ludii_rag.ludii_nlp_pipeline import LudiiNLPPipeline
+from phase1_ludii_rag.nlp_pipeline import LudiiNLPPipeline
 from phase4_neo4j.pipeline import Neo4jPipeline
 from phase4_neo4j.analytics import GameAnalytics
 

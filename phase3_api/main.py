@@ -10,6 +10,8 @@ from phase3_api.dependencies import get_detector, get_pipeline
 from phase3_api.schemas import HealthResponse
 from phase3_api.endpoints import detect, rules, restore, analyze, graph
 
+from .historical_search import router as historical_router
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print("Demarrage de l'API...")
@@ -37,6 +39,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+app.include_router(historical_router)
 
 @app.get("/health", response_model=HealthResponse, tags=["System"])
 async def health():
