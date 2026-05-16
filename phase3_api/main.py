@@ -5,12 +5,13 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from phase3_api.dependencies import get_detector, get_pipeline
+
 
 from phase3_api.schemas import HealthResponse
 from phase3_api.endpoints import detect, rules, restore, analyze, graph
 
 from .historical_search import router as historical_router
+from .gnn_routes import router as gnn_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -41,6 +42,7 @@ app.add_middleware(
 
 
 app.include_router(historical_router)
+app.include_router(gnn_router)
 
 @app.get("/health", response_model=HealthResponse, tags=["System"])
 async def health():
