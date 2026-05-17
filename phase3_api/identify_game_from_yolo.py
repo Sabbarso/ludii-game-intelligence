@@ -26,28 +26,27 @@ async def identify_game(yolo_result: YOLODetectionResult):
             # Extraire types de pièces détectées
             detected_piece_types = list(set([p["type"] for p in yolo_result.pieces]))
             
-            # Query: Match exact
-            game = session.run("""
+            # STRATEGY 1: Match par dimensions + total pièces (exact match)
+            result = session.run("""
                 MATCH (sig:YOLOSignature)
                 WHERE sig.board_cols = $cols
                 AND sig.board_rows = $rows
                 AND sig.total_pieces = $total
-                AND ALL(piece IN sig.required_pieces WHERE piece IN $detected)
                 MATCH (g:LudiiGame {name: sig.game_name})
-                RETURN sig.game_name as game, g.official_description as desc, g.official_rules as rules, 0.95 as confidence
+                RETURN sig.game_name as game, g.official_description as desc, g.official_rules as rules
                 LIMIT 1
             """,
             cols=yolo_result.board_cols,
             rows=yolo_result.board_rows,
-            total=yolo_result.total_pieces,
-            detected=detected_piece_types
-            ).single()
+            total=yolo_result.total_pieces
+            ).data()
             
-            if game:
+            if result:
+                game = result[0]
                 return {
                     "status": "success",
                     "identified_game": game['game'],
-                    "confidence": game['confidence'],
+                    "confidence": 0.95,
                     "yolo_detection": {
                         "board": [yolo_result.board_cols, yolo_result.board_rows],
                         "total_pieces": yolo_result.total_pieces,
@@ -59,43 +58,47 @@ async def identify_game(yolo_result: YOLODetectionResult):
                     }
                 }
             
-            # Query: Match flexible (si erreur)
-            game = session.run("""
+            # STRATEGY 2: Match flexible (tolérance erreurs détection)
+            result = session.run("""
                 MATCH (sig:YOLOSignature)
                 WHERE sig.board_cols = $cols
                 AND sig.board_rows = $rows
                 AND ABS(sig.total_pieces - $total) <= 5
-                WITH sig, 
-                     size([p IN sig.required_pieces WHERE p IN $detected]) as matched,
-                     size(sig.required_pieces) as required
-                WHERE matched >= (required * 0.7)
+                WITH sig
                 MATCH (g:LudiiGame {name: sig.game_name})
                 RETURN sig.game_name as game, 
-                       (matched * 100.0 / required) as match_ratio,
                        g.official_description as desc,
-                       g.official_rules as rules
-                ORDER BY match_ratio DESC
+                       g.official_rules as rules,
+                       sig.total_pieces as expected_pieces
+                ORDER BY ABS(sig.total_pieces - $total)
                 LIMIT 1
             """,
             cols=yolo_result.board_cols,
             rows=yolo_result.board_rows,
-            total=yolo_result.total_pieces,
-            detected=detected_piece_types
-            ).single()
+            total=yolo_result.total_pieces
+            ).data()
             
-            if game:
+            if result:
+                game = result[0]
+                match_ratio = yolo_result.total_pieces / game['expected_pieces']
                 return {
                     "status": "partial_match",
                     "identified_game": game['game'],
-                    "confidence": game['match_ratio'] / 100,
+                    "confidence": min(0.85, match_ratio * 0.95),
                     "yolo_detection": {
                         "board": [yolo_result.board_cols, yolo_result.board_rows],
                         "total_pieces": yolo_result.total_pieces,
                         "piece_types": detected_piece_types
+                    },
+                    "game_details": {
+                        "description": game['desc'],
+                        "rules": game['rules']
                     }
                 }
             
-            raise HTTPException(404, "No matching game found")
+            raise HTTPException(404, "No matching game found in database")
     
+    except HTTPException:
+        raise
     except Exception as e:
-        raise HTTPException(500, str(e))
+        raise HTTPException(500, f"Error: {str(e)}")
