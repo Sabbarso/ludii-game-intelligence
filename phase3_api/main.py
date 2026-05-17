@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from phase3_api.schemas import HealthResponse
 from phase3_api.historical_search import router as historical_router
 from phase3_api.gnn_routes import router as gnn_router
+from phase3_api.yolo_routes import router as yolo_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -44,6 +45,7 @@ app.add_middleware(
 # ========== ROUTERS ==========
 app.include_router(historical_router)
 app.include_router(gnn_router)
+app.include_router(yolo_router)
 
 # ========== BASIC ENDPOINTS ==========
 @app.get("/", tags=["System"])
