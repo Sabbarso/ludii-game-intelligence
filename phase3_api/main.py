@@ -7,8 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from phase3_api.schemas import HealthResponse
 from phase3_api.historical_search import router as historical_router
 from phase3_api.gnn_routes import router as gnn_router
-
 from phase3_api.identify_game_from_yolo import router as yolo_identify_router
+from phase3_api.hybrid_rag_routes import router as hybrid_rag_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -20,8 +20,8 @@ async def lifespan(app: FastAPI):
     print("   ✅ Neo4j Graph Database")
     print("   ✅ GNN Embeddings (32-dim)")
     print("   ✅ Historical Search")
-    print("   ⏳ Vision (Phase 5)")
-    print("   ⏳ NLP RAG (Phase 1)")
+    print("   ✅ YOLO Identification")
+    print("   ✅ Hybrid RAG (Graph + Embeddings)")
     print("\n✅ API READY!")
     print("="*80 + "\n")
     yield
@@ -46,8 +46,8 @@ app.add_middleware(
 # ========== ROUTERS ==========
 app.include_router(historical_router)
 app.include_router(gnn_router)
-
 app.include_router(yolo_identify_router)
+app.include_router(hybrid_rag_router)
 
 # ========== BASIC ENDPOINTS ==========
 @app.get("/", tags=["System"])
@@ -61,6 +61,8 @@ async def root():
         "endpoints": {
             "historical": "/api/v1/historical_search",
             "gnn": "/api/v1/gnn/similar_games",
+            "yolo": "/api/v1/identify_game_from_yolo",
+            "rag": "/api/v1/rag/ask",
             "swagger": "/docs"
         }
     }
@@ -74,7 +76,9 @@ async def health():
         components={
             "neo4j": "ready",
             "gnn": "ready",
-            "historical_search": "ready"
+            "historical_search": "ready",
+            "yolo": "ready",
+            "rag": "ready"
         },
         supported_games=["chess", "go", "checkers", "shogi", "xiangqi"]
     )
