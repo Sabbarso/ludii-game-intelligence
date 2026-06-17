@@ -1,120 +1,158 @@
-Voici le contenu du fichier `README.md` à placer à la racine de votre dépôt GitHub.
-
-```markdown
 # 🏺 LUDII Game Intelligence
+### Intelligence Artificielle pour l'Archéologie Ludique
 
-**Intelligence Artificielle pour l'Archéologie Ludique**
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/FastAPI-0.104+-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Neo4j-5.x-008CC1?style=for-the-badge&logo=neo4j&logoColor=white"/>
+  <img src="https://img.shields.io/badge/YOLOv8-Ultralytics-FF6F00?style=for-the-badge&logo=opencv&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Streamlit-1.32+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"/>
+  <img src="https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge"/>
+</p>
 
-[![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
-[![Neo4j](https://img.shields.io/badge/Neo4j-5.x-brightgreen.svg)](https://neo4j.com/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red.svg)](https://streamlit.io/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<p align="center">
+  <b>Identifier · Contextualiser · Reconstituer</b><br/>
+  Un système IA complet pour l'analyse automatique des jeux de société historiques
+</p>
 
 ---
 
 ## 📖 Présentation
 
-**LUDII Game Intelligence** est un système d'intelligence artificielle conçu pour aider les archéologues à **identifier**, **analyser** et **reconstituer** des jeux de société anciens à partir d'artefacts (plateaux, fragments, pièces). 
+**LUDII Game Intelligence** est une plateforme d'intelligence artificielle conçue pour assister les archéologues dans l'**identification**, l'**analyse historique** et la **reconstruction** de jeux de table anciens à partir d'artefacts physiques (plateaux fragmentaires, pièces isolées, photographies de fouilles).
 
-Il combine :
-- La **vision par ordinateur** (YOLOv8) pour détecter plateaux et pièces sur des photos,
-- Une **base de connaissances en graphe** (Neo4j) modélisant 1 621 jeux historiques,
-- Un **moteur de recherche sémantique** et un **LLM** (Gemini 2.5 Flash) pour répondre aux questions en langage naturel,
-- Une **reconstruction 3D** des plateaux identifiés,
-- Une **interface utilisateur** (Streamlit) et un **workflow d'orchestration** (n8n).
+Le système combine quatre piliers technologiques :
+
+| Pilier | Technologie | Rôle |
+|--------|-------------|------|
+| 👁️ Vision | YOLOv8 | Détection des pièces et du plateau sur image |
+| 🧠 Connaissance | Neo4j (graphe) | 1 621 jeux · 3 337 règles · 16 739 relations |
+| 💬 Langage | Gemini 2.0 Flash + RAG | Réponses contextualisées en langage naturel |
+| 🏗️ Reconstruction | Trimesh | Modèles 3D interactifs au format GLB |
 
 ---
 
 ## ✨ Fonctionnalités
 
-- 📷 **Analyse d'image** : téléversez une photo de plateau, YOLO détecte les dimensions et les pièces, le système identifie le jeu.
-- 📝 **Description textuelle** : décrivez l'artefact (matériau, forme, symboles, lieu de découverte), le système suggère les jeux les plus probables.
-- 🗺️ **Inférence géographique** : à partir d'une région ou d'un lieu de fouille, retrouvez les jeux historiques associés.
-- 📏 **Dimensions partielles** : même avec un plateau incomplet, le système propose une identification avec un score de confiance.
-- 🏗️ **Reconstruction 3D** : visualisez interactivement le plateau reconstitué avec ses pièces.
-- 💬 **Question/Réponse** : interrogez le système en langage naturel sur les règles, l'origine ou l'histoire d'un jeu.
-- 🔗 **Jeux similaires** : découvrez des jeux culturellement, temporellement ou thématiquement proches.
-- 📊 **Dashboard analytique** : explorez les statistiques de la base (types de plateaux, dimensions, pièces).
-
----
-
-## 🧱 Architecture
-
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Streamlit UI  │    │   Swagger API   │    │   n8n Workflow  │
-└────────┬────────┘    └────────┬────────┘    └────────┬────────┘
-         │                      │                      │
-         └──────────────────────┼──────────────────────┘
-                                │
-                         ┌──────┴──────┐
-                         │   FastAPI   │
-                         └──────┬──────┘
-                                │
-              ┌─────────────────┼─────────────────┐
-              │                 │                 │
-       ┌──────┴──────┐   ┌──────┴──────┐   ┌──────┴──────┐
-       │    Neo4j    │   │   Gemini    │   │  Sentence   │
-       │   (Graphe)  │   │  2.5 Flash  │   │Transformers │
-       └─────────────┘   └─────────────┘   └─────────────┘
+📷  Analyse d'image      →  Upload photo → YOLO détecte → Graphe identifie
+📝  Description libre    →  Texte de l'artefact → Recherche sémantique
+🗺️  Lieu de fouille     →  Région/période → Jeux culturellement proches
+📏  Dimensions partielles→  Plateau endommagé → Identification tolérante
+🏗️  Reconstruction 3D   →  Modèle GLB interactif du plateau reconstitué
+💬  Question/Réponse     →  « Quelles sont les règles du Senet ? » → Gemini
+🔗  Jeux similaires      →  Traversée du graphe par région, période, catégorie
+📊  Dashboard analytics  →  KPIs, distributions, statistiques du corpus
 ```
 
 ---
 
-## 🛠️ Stack Technique
+## 🧱 Architecture du système
 
-| Composant          | Technologie                    | Usage                                      |
-|--------------------|--------------------------------|--------------------------------------------|
-| Base de données    | Neo4j 5.x                      | Graphe de connaissances (1 621 jeux)       |
-| API                | FastAPI                        | Endpoints REST (8 routes)                  |
-| Vision             | YOLOv8                         | Détection de plateaux et pièces            |
-| LLM                | Gemini 2.5 Flash (Google AI)   | Génération de réponses en français         |
-| Embeddings         | all-MiniLM-L6-v2               | Recherche sémantique par similarité cosinus|
-| Orchestration      | n8n (Docker)                   | Workflow automatisé                        |
-| Interface          | Streamlit                      | Dashboard interactif + reconstruction 3D   |
-| Modélisation 3D    | Trimesh                        | Génération de plateaux au format GLB       |
-| Visualisation      | Plotly                         | Graphiques du dashboard analytics          |
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                        INTERFACES UTILISATEUR                       │
+│         Streamlit (UI)        Swagger (API)        n8n (Workflows)  │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               │
+                        ┌──────┴──────┐
+                        │   FastAPI   │   ← REST API Python 3.11
+                        └──────┬──────┘
+                               │
+          ┌────────────────────┼────────────────────┐
+          │                    │                    │
+   ┌──────┴──────┐      ┌──────┴──────┐     ┌──────┴──────┐
+   │   Neo4j     │      │   Gemini    │     │  Sentence   │
+   │  1 621 jeux │      │  2.0 Flash  │     │ Transformers│
+   └──────┬──────┘      └─────────────┘     └─────────────┘
+          │
+   ┌──────┴──────┐
+   │   YOLOv8   │   ← Vision par ordinateur
+   └─────────────┘
+```
 
 ---
 
-## 📁 Structure du Projet
+## 📦 Stack technique
+
+| Composant | Technologie | Version |
+|-----------|-------------|---------|
+| Base de données | Neo4j | 5.x |
+| API REST | FastAPI | 0.104+ |
+| Détection visuelle | YOLOv8 (Ultralytics) | latest |
+| Modèle de langage | Gemini 2.0 Flash | Google AI |
+| Embeddings sémantiques | all-MiniLM-L6-v2 | Sentence Transformers |
+| Orchestration | n8n | 2.25.7 (Docker) |
+| Interface utilisateur | Streamlit | 1.32+ |
+| Reconstruction 3D | Trimesh | latest |
+| Visualisation | Plotly | latest |
+| Runtime | Python | 3.11 |
+
+---
+
+## 📊 Base de connaissances
+
+```
+  Jeux documentés     ████████████████████  1 621
+  Règles (Rulesets)   ████████████████████  3 337
+  Signatures YOLO     ████████████████████    486
+  Régions historiques ████████████████████     28
+  Périodes            ████████████████████     13
+  Catégories          ████████████████████     52
+  Relations (graphe)  ████████████████████ ~16 739
+```
+
+Couvrant **5 continents**, **13 périodes chronologiques** (de l'Antiquité à nos jours)
+et **52 catégories** de jeux, du Senet égyptien aux échecs contemporains.
+
+---
+
+## 📁 Structure du projet
 
 ```
 ludii-game-intelligence/
-├── phase1_ludii_rag/          # Système RAG (embeddings + Gemini)
-│   ├── hybrid_rag.py
+│
+├── phase1_ludii_rag/               # Système RAG hybride
+│   ├── hybrid_rag.py               #   Embeddings + Gemini + fallback Neo4j
 │   └── __init__.py
-├── phase2_vision/             # Vision par ordinateur
-│   ├── board_3d.py            # Reconstruction 3D
-│   ├── detect.py              # Détection YOLO
-│   └── ...
-├── phase3_api/                # API REST
-│   ├── main.py                # Point d'entrée FastAPI
-│   ├── identify_game_from_yolo.py  # Endpoints YOLO + 3D + similaires
-│   ├── hybrid_rag_routes.py   # Endpoints RAG
-│   └── ...
-├── phase4_neo4j/              # Scripts d'import et d'enrichissement Neo4j
-│   ├── pipeline.py
-│   ├── import_lud_signatures.py
-│   ├── import_regions_periods.py
-│   └── ...
-├── app.py                     # Interface Streamlit
-├── requirements.txt           # Dépendances Python
-├── .env                       # Variables d'environnement
-└── README.md                  # Ce fichier
+│
+├── phase2_vision/                  # Vision par ordinateur
+│   ├── board_detector.py           #   Détection du plateau
+│   ├── piece_detector.py           #   Détection des pièces
+│   ├── board_3d.py                 #   Reconstruction 3D (Trimesh → GLB)
+│   └── detect.py                   #   Script de détection
+│
+├── phase3_api/                     # API REST FastAPI
+│   ├── main.py                     #   Point d'entrée — routers
+│   ├── identify_game_from_yolo.py  #   Identification + 3D + similarité
+│   ├── hybrid_rag_routes.py        #   Endpoints RAG / question-réponse
+│   ├── historical_search.py        #   Recherche géo-temporelle
+│   ├── gnn_routes.py               #   Similarité GNN
+│   └── schemas.py                  #   Modèles Pydantic
+│
+├── phase4_neo4j/                   # Pipeline de données Neo4j
+│   ├── pipeline.py                 #   Connexion et utilitaires
+│   ├── import_mysql_to_neo4j.py    #   Import MySQL → Neo4j
+│   ├── import_lud_signatures.py    #   Parsing .lud → YOLOSignature
+│   ├── import_regions_periods.py   #   Régions, périodes, catégories
+│   └── import_rules_features.py    #   Vecteurs de règles + distances
+│
+├── app.py                          # Interface Streamlit
+├── requirements.txt                # Dépendances Python
+├── .env.example                    # Template variables d'environnement
+└── README.md
 ```
 
 ---
 
-## 🚀 Installation et Démarrage
+## 🚀 Installation
 
 ### Prérequis
 
-- **Python 3.11+**
-- **Neo4j 5.x** (local ou Desktop)
-- **Docker** (pour n8n, optionnel)
-- **Clé API Gemini** (gratuite sur [Google AI Studio](https://aistudio.google.com/))
+- Python 3.11+
+- Neo4j 5.x ([Neo4j Desktop](https://neo4j.com/download/))
+- Docker (pour n8n — optionnel)
+- Clé API Gemini ([Google AI Studio](https://aistudio.google.com/) — gratuit)
 
 ### 1. Cloner le dépôt
 
@@ -123,43 +161,53 @@ git clone https://github.com/salma12814/ludii-game-intelligence.git
 cd ludii-game-intelligence
 ```
 
-### 2. Créer l'environnement virtuel et installer les dépendances
+### 2. Environnement virtuel et dépendances
 
 ```bash
 python -m venv venv
-venv\Scripts\activate      # Windows
-# source venv/bin/activate # Linux/Mac
+
+# Windows
+venv\Scripts\activate
+
+# Linux / macOS
+source venv/bin/activate
+
 pip install -r requirements.txt
 ```
 
-### 3. Configurer les variables d'environnement
+### 3. Variables d'environnement
 
-Créez un fichier `.env` à la racine :
-
+```bash
+cp .env.example .env
 ```
+
+Éditez `.env` :
+
+```env
 NEO4J_URI=bolt://localhost:7687
 NEO4J_USER=neo4j
 NEO4J_PASSWORD=votre_mot_de_passe
-GEMINI_API_KEY=votre_clé_gemini
+GEMINI_API_KEY=votre_clé_api_gemini
 ```
 
-### 4. Importer les données dans Neo4j
+### 4. Construire le graphe Neo4j
 
-Assurez-vous que Neo4j est lancé, puis exécutez les scripts d'import (si ce n'est pas déjà fait) :
+Assurez-vous que Neo4j est démarré, puis exécutez les scripts dans l'ordre :
 
 ```bash
-python phase4_neo4j/import_mysql_to_neo4j.py
-python phase4_neo4j/generate_yolo_signatures.py
-python phase4_neo4j/import_rules_features.py
+python phase4_neo4j/import_mysql_to_neo4j.py      # 1 621 jeux, 3 337 règles
+python phase4_neo4j/import_lud_signatures.py       # 486 signatures YOLO
+python phase4_neo4j/import_regions_periods.py      # Régions, périodes, catégories
+python phase4_neo4j/import_rules_features.py       # Distances géo/temporelles
 ```
 
 ### 5. Lancer l'API
 
 ```bash
-uvicorn phase3_api.main:app --reload
+uvicorn phase3_api.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-L'API est accessible sur [http://localhost:8000/docs](http://localhost:8000/docs).
+→ Documentation interactive : [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ### 6. Lancer l'interface Streamlit
 
@@ -167,87 +215,90 @@ L'API est accessible sur [http://localhost:8000/docs](http://localhost:8000/docs
 streamlit run app.py
 ```
 
-L'interface est accessible sur [http://localhost:8501](http://localhost:8501).
+→ Interface utilisateur : [http://localhost:8501](http://localhost:8501)
 
-### 7. (Optionnel) Lancer n8n avec Docker
+### 7. (Optionnel) Lancer n8n
 
 ```bash
 docker run -d --name n8n -p 5678:5678 n8nio/n8n
 ```
 
-Puis importez le workflow `ludii_workflow.json` dans l'interface [http://localhost:5678](http://localhost:5678).
+→ Importer `ludii_workflow.json` dans [http://localhost:5678](http://localhost:5678)
 
 ---
 
-## 📸 Captures d'écran
+## 🌐 URLs des services
 
-### Interface Streamlit – Onglet Description
-![Onglet Description](captures/streamlit_description.png)
-
-### Reconstruction 3D d'un plateau
-![Reconstruction 3D](captures/streamlit_3d.png)
-
-### Dashboard Analytics
-![Dashboard](captures/streamlit_dashboard.png)
-
-### API Swagger
-![Swagger](captures/swagger_main.png)
+| Service | URL |
+|---------|-----|
+| API FastAPI | http://localhost:8000 |
+| Documentation Swagger | http://localhost:8000/docs |
+| Interface Streamlit | http://localhost:8501 |
+| Orchestration n8n | http://localhost:5678 |
+| Neo4j Browser | http://localhost:7474 |
 
 ---
 
-## 🧪 Tests
+## 🧪 Exemples d'utilisation
 
-Vous pouvez tester l'API directement via Swagger ou avec `curl` :
+**Identification par dimensions (API) :**
+
+```bash
+curl -X POST http://localhost:8000/api/v1/identify_game_from_yolo \
+  -H "Content-Type: application/json" \
+  -d '{"board_cols": 8, "board_rows": 8, "total_pieces": 32, "pieces": []}'
+```
+
+**Question en langage naturel (API) :**
 
 ```bash
 curl "http://localhost:8000/api/v1/rag/ask?question=Explique-moi les règles du Senet"
 ```
 
-Ou via le webhook n8n :
+**Via webhook n8n :**
 
 ```bash
 curl -X POST http://localhost:5678/webhook/ludii/analyze \
   -H "Content-Type: application/json" \
-  -d '{"description":"Plateau en bois trouvé dans une tombe égyptienne"}'
+  -d '{"description": "Plateau en bois trouvé dans une tombe égyptienne, 30 cases"}'
 ```
 
 ---
 
-## 📊 Base de Connaissances
+## 📸 Captures d'écran
 
-| Entité           | Nombre   |
-|------------------|----------|
-| Jeux             | 1 621    |
-| Règles           | 3 337    |
-| Signatures YOLO  | 486      |
-| Régions          | 28       |
-| Périodes         | 13       |
-| Catégories       | 52       |
-| Relations totales| ~16 739  |
+> Placez vos captures dans un dossier `captures/` à la racine du dépôt.
+
+| Interface | Aperçu |
+|-----------|--------|
+| Streamlit — Identification par image | `captures/streamlit_image.png` |
+| Streamlit — Question/Réponse RAG | `captures/streamlit_rag.png` |
+| Streamlit — Reconstruction 3D | `captures/streamlit_3d.png` |
+| Streamlit — Dashboard analytics | `captures/streamlit_dashboard.png` |
+| API — Swagger UI | `captures/swagger_ui.png` |
+| Neo4j Browser — Graphe | `captures/neo4j_browser.png` |
 
 ---
 
 ## 🤝 Contribution
 
-Les contributions sont les bienvenues ! Pour toute suggestion ou amélioration, veuillez ouvrir une issue ou soumettre une pull request.
+Les contributions sont les bienvenues.
+
+1. Forkez le dépôt
+2. Créez une branche : `git checkout -b feature/ma-fonctionnalite`
+3. Commitez vos changements : `git commit -m 'feat: description'`
+4. Pushez : `git push origin feature/ma-fonctionnalite`
+5. Ouvrez une Pull Request
 
 ---
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+Ce projet est distribué sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ---
 
-## 🙏 Remerciements
-
-- Base de données [Ludii](https://ludii.games/) pour le corpus de jeux
-- Google AI pour l'API Gemini
-- Équipe encadrante du projet
-
----
-
-**🏺 LUDII Game Intelligence – Quand l'IA rencontre l'archéologie ludique**
-```
-
-Il vous suffit de copier ce contenu dans un fichier `README.md` à la racine de votre dépôt GitHub. Les captures d'écran doivent être placées dans un dossier `captures/` (ou vous pouvez ajuster les chemins). Ce README couvre l'essentiel de votre projet et donne une bonne première impression aux visiteurs.
+<p align="center">
+  <b>🏺 LUDII Game Intelligence</b> — IA pour l'Archéologie Ludique<br/>
+  <a href="https://github.com/salma12814/ludii-game-intelligence">github.com/salma12814/ludii-game-intelligence</a>
+</p>
