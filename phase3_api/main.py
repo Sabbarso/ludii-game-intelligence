@@ -5,8 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from phase3_api.schemas import HealthResponse
-from phase3_api.historical_search import router as historical_router
-from phase3_api.gnn_routes import router as gnn_router
+
 from phase3_api.identify_game_from_yolo import router as yolo_identify_router
 from phase3_api.hybrid_rag_routes import router as hybrid_rag_router
 
@@ -44,8 +43,7 @@ app.add_middleware(
 )
 
 # ========== ROUTERS ==========
-app.include_router(historical_router)
-app.include_router(gnn_router)
+
 app.include_router(yolo_identify_router)
 app.include_router(hybrid_rag_router)
 
